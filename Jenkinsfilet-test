@@ -1,0 +1,35 @@
+stages {
+    stage('Unit tests') { 
+        steps { 
+            script{
+                //Run unit tests depends on language/framework
+                //For example: 
+                sh 'pytest tests/unit_tests'
+            }
+        }
+    }
+    stage('Integration tests') { 
+        steps { 
+            script{
+                //Run integration tests depends on language/framework
+                //For example: 
+                sh 'pytest tests/integration_tests'
+            }
+        }
+    }
+    stage('E2E tests') {
+        steps {
+            script{
+                //Run Selenium tests
+            }
+        }
+    }
+    stage('Code analysis'){
+        steps {
+            script{
+                //Run SonarQube analysis
+            }
+        }
+    }
+
+}
